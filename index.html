@@ -145,7 +145,7 @@ h1{font-size:26px;font-weight:700;color:#fff;margin-bottom:6px;}
 }
 </style>
 
-<!-- ================= META PIXEL (RESTORED) ================= -->
+<!-- ================= META PIXEL ================= -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -199,7 +199,8 @@ for(let i=0;i<35;i++){
         <div class="feature"><i class="fa-solid fa-gem"></i> No Tips • Only Strategy</div>
     </div>
 
-    <button class="telegram-btn" onclick="window.location.href='https://t.me/+ZcLOo7eWdjxiNjQ1'">
+    <!-- CTA WITH SINGLE-FIRE EVENT -->
+    <button class="telegram-btn" id="telegramBtn">
         <i class="fa-brands fa-telegram"></i>
         JOIN PREMIUM TELEGRAM
     </button>
@@ -218,6 +219,25 @@ for(let i=0;i<35;i++){
     </div>
 
 </div>
+
+<!-- ================= SINGLE-FIRE TELEGRAM EVENT ================= -->
+<script>
+let telegramFired = false;
+
+document.getElementById("telegramBtn").addEventListener("click", function () {
+
+    if(!telegramFired){
+        fbq('trackCustom','TelegramSubscribe');
+        telegramFired = true;
+    }
+
+    setTimeout(function(){
+        window.location.href = "https://t.me/+ZcLOo7eWdjxiNjQ1";
+    }, 200);
+
+});
+</script>
+<!-- ================= END EVENT ================= -->
 
 </body>
 </html>
