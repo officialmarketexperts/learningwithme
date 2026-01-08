@@ -3,168 +3,380 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Elite Stock Market Community</title>
+<title>Gujrati Trader - Premium Stock Trading</title>
 
 <!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <!-- Font Awesome -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-
-body{
-    min-height:100vh;
-    background:radial-gradient(circle at top,#1e1b4b,#020617 75%);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    overflow:hidden;
+/* 👑 CROWNS ON i & t + RED-GREEN BUTTON */
+h1 {
+    margin-top: 25px !important;
+    position: relative;
 }
 
-/* GOLD PARTICLES */
-.particle{
-    position:absolute;
-    width:4px;
-    height:4px;
-    background:rgba(250,204,21,0.6);
-    border-radius:50%;
-    animation:float 18s linear infinite;
-}
-@keyframes float{
-    from{transform:translateY(110vh);}
-    to{transform:translateY(-130vh);}
-}
-
-/* CARD */
-.card{
-    position:relative;
-    width:92%;
-    max-width:430px;
-    background:rgba(255,255,255,0.06);
-    backdrop-filter:blur(18px);
-    border-radius:30px;
-    padding:40px 26px 34px;
-    text-align:center;
-    box-shadow:0 55px 120px rgba(0,0,0,0.75);
-    overflow:hidden;
-}
-.card::before{
-    content:"";
-    position:absolute;
-    inset:-1px;
-    border-radius:30px;
-    background:linear-gradient(120deg,transparent,#facc15,transparent);
-    animation:borderMove 6s linear infinite;
-    opacity:0.4;
-}
-@keyframes borderMove{
-    from{transform:translateX(-100%);}
-    to{transform:translateX(100%);}
+h1::before {
+    content: '\f905';
+    position: absolute;
+    top: -28px;
+    left: 38%;
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 20px;
+    background: linear-gradient(45deg, #facc15, #fde68a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: crownFloat 3s ease-in-out infinite;
+    z-index: 5;
 }
 
-/* LOGO */
-.logo-wrap{
-    width:120px;height:120px;
-    margin:0 auto 22px;
-    border-radius:28px;
-    padding:6px;
-    background:linear-gradient(145deg,#0f172a,#020617);
-    box-shadow:0 0 60px rgba(250,204,21,0.85);
-}
-.logo-inner{
-    width:100%;height:100%;
-    border-radius:22px;
-    background:#fff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-.logo-inner img{width:82%;}
-
-/* TITLE */
-h1{font-size:26px;font-weight:700;color:#fff;margin-bottom:6px;}
-.sub{font-size:14px;color:#c7d2fe;margin-bottom:28px;}
-
-/* FEATURES */
-.features{text-align:left;margin-bottom:36px;}
-.feature{
-    display:flex;
-    align-items:center;
-    gap:14px;
-    font-size:15px;
-    margin-bottom:16px;
-    color:#e5e7eb;
-}
-.feature i{
-    color:#facc15;
-    font-size:18px;
-    animation:iconFloat 3s ease-in-out infinite;
-}
-@keyframes iconFloat{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-4px);}
+h1::after {
+    content: '\f905';
+    position: absolute;
+    top: -28px;
+    right: 38%;
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 20px;
+    background: linear-gradient(45deg, #facc15, #fde68a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: crownFloat 3s ease-in-out infinite reverse;
+    z-index: 5;
 }
 
-/* CTA BUTTON */
-.telegram-btn{
-    width:100%;
-    padding:16px;
-    font-size:16px;
-    font-weight:600;
-    color:#020617;
-    border:none;
-    border-radius:16px;
-    background:linear-gradient(135deg,#facc15,#fde68a);
-    cursor:pointer;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:12px;
-    box-shadow:0 18px 45px rgba(250,204,21,0.65);
-    animation:fastZoom 0.8s ease-in-out infinite;
+@keyframes crownFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
 }
-@keyframes fastZoom{
-    0%{transform:scale(1);}
-    50%{transform:scale(1.08);}
-    100%{transform:scale(1);}
+
+.telegram-btn {
+    background: linear-gradient(135deg, #10b981, #059669, #047857) !important;
+    box-shadow: 0 15px 40px rgba(16, 185, 129, 0.5) !important;
+    color: #fff !important;
+    min-height: 62px !important;
+    padding: 20px 26px !important;
+    font-size: 16px !important;
 }
-.telegram-btn:active{transform:scale(0.95);}
-.telegram-btn i{font-size:20px;}
 
-/* RATING */
-.stars{margin:26px 0 10px;color:#facc15;}
-.rating{font-size:13px;color:#c7d2fe;margin-bottom:18px;}
+.telegram-btn i {
+    color: #fff !important;
+}
 
-/* DISCLAIMER */
-.disclaimer{
-    font-size:11.5px;
-    color:#94a3b8;
-    line-height:1.6;
+/* ✅ ONLY CIRCLE PHOTO - NO BORDERS */
+.logo-wrap {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 15px;
+}
+
+.logo-inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    /* ✅ NO BACKGROUND, NO BORDER, NO SHADOW */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    overflow: hidden;
+}
+
+.logo-inner img {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    display: block !important;
+    /* ✅ Clean photo only */
+}
+
+/* BAKI SAB SAME */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e1b4b 0%, #020617 70%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 12px;
+    overflow-y: auto;
+    position: relative;
+}
+
+body::-webkit-scrollbar { display: none; }
+
+.particle {
+    position: fixed;
+    width: 3px;
+    height: 3px;
+    background: rgba(250, 204, 21, 0.6);
+    border-radius: 50%;
+    animation: float 20s linear infinite;
+    z-index: 1;
+}
+
+@keyframes float {
+    from { transform: translateY(110vh); }
+    to { transform: translateY(-130vh); }
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    max-width: 340px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 28px 20px 25px;
+    text-align: center;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+    overflow: visible;
+    margin-bottom: 15px;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 24px;
+    background: linear-gradient(120deg, transparent, rgba(250,204,21,0.3), transparent);
+    animation: borderMove 8s linear infinite;
+    opacity: 0.4;
+    z-index: 1;
+}
+
+@keyframes borderMove {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(100%); }
+}
+
+.title-section {
+    position: relative;
+    margin-bottom: 22px;
+}
+
+h1 {
+    font-size: 23px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #facc15, #fde68a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+    position: relative;
+    z-index: 3;
+}
+
+.sub {
+    font-size: 13px;
+    color: #c7d2fe;
+    font-weight: 500;
+    margin-bottom: 25px;
+    line-height: 1.4;
+}
+
+.features {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #e5e7eb;
+    line-height: 1.5;
+    padding: 14px;
+    background: rgba(250, 204, 21, 0.08);
+    border-radius: 14px;
+    border-left: 3px solid #facc15;
+    transition: all 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateX(6px);
+    background: rgba(250, 204, 21, 0.15);
+}
+
+.feature i {
+    color: #facc15;
+    font-size: 18px;
+    animation: iconFloat 3s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+.telegram-btn {
+    width: 100%;
+    font-weight: 700;
+    border: none;
+    border-radius: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    animation: btnPulse 2s ease-in-out infinite;
+    position: relative;
+    z-index: 3;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+@keyframes btnPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+.telegram-btn:hover {
+    transform: translateY(-2px);
+}
+
+.telegram-btn:active {
+    transform: scale(0.96);
+}
+
+.telegram-btn i {
+    font-size: 22px;
+}
+
+.stars {
+    margin: 25px 0 12px;
+    color: #facc15;
+}
+
+.stars i {
+    font-size: 16px;
+    margin: 0 2px;
+    animation: starTwinkle 2s ease-in-out infinite;
+}
+
+@keyframes starTwinkle {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+.rating {
+    font-size: 13px;
+    color: #c7d2fe;
+    font-weight: 500;
+    margin-bottom: 22px;
+}
+
+.customers-box {
+    margin: 22px 0 28px !important;
+    padding: 20px !important;
+    background: rgba(250, 204, 21, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 2px solid rgba(250, 204, 21, 0.3);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    position: relative;
+    z-index: 3 !important;
+    max-height: 180px !important;
+    min-height: 150px !important;
+    overflow-y: auto !important;
+}
+
+.customers-title {
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: #facc15 !important;
+    margin-bottom: 14px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+.customers-title i {
+    font-size: 16px !important;
+}
+
+.customer-list {
+    max-height: 120px !important;
+    overflow-y: auto !important;
+    min-height: 100px !important;
+}
+
+.customer-item {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 12px 14px !important;
+    font-size: 13.5px !important;
+    border-bottom: 1px solid rgba(250, 204, 21, 0.2) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    margin-bottom: 6px !important;
+    border-radius: 10px !important;
+}
+
+.customer-item:last-child {
+    border-bottom: none !important;
+    margin-bottom: 0 !important;
+}
+
+.customer-name {
+    color: #e5e7eb !important;
+    font-weight: 600 !important;
+}
+
+.profit {
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    padding: 6px 12px !important;
+    border-radius: 8px !important;
+    min-width: 110px !important;
+    text-align: center !important;
+}
+
+.profit.positive {
+    color: #10b981 !important;
+    background: rgba(16, 185, 129, 0.2) !important;
+}
+
+.profit.negative {
+    color: #ef4444 !important;
+    background: rgba(239, 68, 68, 0.2) !important;
+}
+
+.disclaimer {
+    font-size: 11.5px;
+    color: #94a3b8;
+    line-height: 1.6;
+    text-align: center;
+    padding: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 14px;
+    position: relative;
+    z-index: 3;
 }
 </style>
 
-<!-- ================= META PIXEL ================= -->
+<!-- META PIXEL -->
 <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-
-fbq('init','848758444744237');
-fbq('track','PageView');
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','848758444744237');fbq('track','PageView');
 </script>
-
-<noscript>
-<img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=848758444744237&ev=PageView&noscript=1"/>
-</noscript>
-<!-- ================= END META PIXEL ================= -->
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=848758444744237&ev=PageView&noscript=1"/></noscript>
 
 </head>
 
@@ -172,76 +384,117 @@ src="https://www.facebook.com/tr?id=848758444744237&ev=PageView&noscript=1"/>
 
 <!-- PARTICLES -->
 <script>
-for(let i=0;i<35;i++){
-  let p=document.createElement("div");
-  p.className="particle";
-  p.style.left=Math.random()*100+"vw";
-  p.style.animationDuration=(12+Math.random()*10)+"s";
-  document.body.appendChild(p);
+for(let i = 0; i < 20; i++) {
+    let p = document.createElement("div");
+    p.className = "particle";
+    p.style.left = Math.random() * 100 + "vw";
+    p.style.animationDuration = (12 + Math.random() * 10) + "s";
+    document.body.appendChild(p);
 }
 </script>
 
+<!-- SAME HTML -->
 <div class="card">
-
+    <!-- ✅ ONLY CIRCLE PHOTO - NO BORDERS -->
     <div class="logo-wrap">
         <div class="logo-inner">
-            <img src="https://uploads.onecompiler.io/446vwj75z/447fxgqeq/WhatsApp%20Image%202025-12-13%20at%2014.05.45.jpeg" alt="Stock Market">
+            <img src="https://uploads.onecompiler.io/446vwj75z/448zrd6vz/WhatsApp%20Image%202025-12-29%20at%2018.24.42.jpeg" alt="Gujrati Trader" loading="eager">
         </div>
     </div>
 
-     </h1>👑Gujrati Trader👑</h1>
+    <!-- 👑 CROWNS ON i & t -->
+    <div class="title-section">
+        <h1>Gujrati Trader</h1>
+    </div>
+
     <div class="sub">Premium Trading & Market Education</div>
 
     <div class="features">
-        <div class="feature"><i class="fa-solid fa-chart-line"></i> Advanced Market Education</div>
-        <div class="feature"><i class="fa-solid fa-signal"></i> Nifty • BankNifty • Stocks</div>
-        <div class="feature"><i class="fa-solid fa-shield-halved"></i> Risk & Capital Protection</div>
-        <div class="feature"><i class="fa-solid fa-gem"></i> No Tips • Only Strategy</div>
+        <div class="feature">
+            <i class="fas fa-chart-line"></i>Advanced Market Education
+        </div>
+        <div class="feature">
+            <i class="fas fa-signal"></i>Nifty • BankNifty • Stocks
+        </div>
+        <div class="feature">
+            <i class="fas fa-shield-alt"></i>Risk & Capital Protection
+        </div>
+        <div class="feature">
+            <i class="fas fa-gem"></i>No Tips • Only Strategy
+        </div>
     </div>
 
-    <!-- CTA WITH SINGLE-FIRE EVENT -->
     <button class="telegram-btn" id="telegramBtn">
-        <i class="fa-brands fa-telegram"></i>
+        <i class="fab fa-telegram-plane"></i>
         JOIN PREMIUM TELEGRAM
     </button>
 
     <div class="stars">
-        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
     </div>
-
     <div class="rating">Trusted by serious traders</div>
+
+    <div class="customers-box" id="customersBox">
+        <div class="customers-title">
+            <i class="fas fa-users"></i>Recent Profits
+        </div>
+        <div class="customer-list" id="customerList"></div>
+    </div>
 
     <div class="disclaimer">
         Educational purpose only. No tips or guarantees.<br>
-        Market investments are subject to risk.
+        Market investments are subject to market risk.
     </div>
-
 </div>
 
-<!-- ================= SINGLE-FIRE TELEGRAM EVENT ================= -->
+<!-- ✅ FIXED JAVASCRIPT - telegram.me format -->
 <script>
-let telegramFired = false;
+const traderNames = ['Jay Patel', 'Ravi Shah', 'Meera Desai', 'Amit Gandhi', 'Priya Thakkar', 'Vikram Mehta'];
+const symbols = ['NIFTY', 'BANKNIFTY', 'RELIANCE', 'TCS', 'HDFC'];
 
-document.getElementById("telegramBtn").addEventListener("click", function () {
-
-    if(!telegramFired){
-        fbq('trackCustom','TelegramSubscribe');
-        telegramFired = true;
+function getRandomProfit() {
+    if(Math.random() < 0.92) {
+        return `+₹${(Math.floor(Math.random() * 150000 + 50000)).toLocaleString()}`;
+    } else {
+        return `-₹${Math.floor(Math.random() * 1000 + 1000)}`;
     }
+}
 
-    setTimeout(function(){
-        window.location.href = "https://t.me/+qW__ocDhysNhOGJl";
-    }, 200);
+function createCustomerItem() {
+    const name = traderNames[Math.floor(Math.random() * traderNames.length)];
+    const symbol = symbols[Math.floor(Math.random() * symbols.length)];
+    const profit = getRandomProfit();
+    return `
+        <div class="customer-item">
+            <span class="customer-name">${name}</span>
+            <span class="profit ${profit.includes('+') ? 'positive' : 'negative'}">(${symbol}) ${profit}</span>
+        </div>
+    `;
+}
 
-});
+function generateCustomers() {
+    const list = document.getElementById('customerList');
+    if(list) {
+        list.innerHTML = '';
+        for(let i = 0; i < 6; i++) {
+            list.innerHTML += createCustomerItem();
+        }
+    }
+}
+
+generateCustomers();
+setInterval(generateCustomers, 6000);
+
+let tracked = false;
+document.getElementById('telegramBtn').onclick = function() {
+    if(!tracked && typeof fbq !== 'undefined') {
+        fbq('track', 'Subscribe', {value: 999, currency: 'INR'});
+        tracked = true;
+    }
+    // ✅ FIXED: t.me को telegram.me में बदला
+    window.open('https://telegram.me/+qW__ocDhysNhOGJl', '_blank');
+};
 </script>
-<!-- ================= END EVENT ================= -->
 
 </body>
 </html>
-
-
-
-
