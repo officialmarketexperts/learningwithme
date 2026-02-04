@@ -2,216 +2,281 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gujarati Trader</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Gujarati Trader | Premium Stock Market Community</title>
 
-<!-- ================= FIXED META PIXEL ================= -->
+<!-- FONT AWESOME -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<!-- META PIXEL (UNCHANGED) -->
 <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+!function(f,b,e,v,n,t,s){
+if(f.fbq)return;
+n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';
 n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '848758444744237');
-// Removed duplicate PageView - automatic fires once
+s.parentNode.insertBefore(t,s)
+}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1200336325543368');
 </script>
+
 <noscript>
-  <img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=848758444744237&ev=PageView&noscript=1"
-/></noscript>
-<!-- ================= END META PIXEL ================= -->
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1200336325543368&ev=PageView&noscript=1"/>
+</noscript>
 
 <style>
-*{box-sizing:border-box}
+*{margin:0;padding:0;box-sizing:border-box}
+
 body{
-margin:0;
-font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
-background:linear-gradient(135deg,#0a0a0a 0%,#1a1a2e 50%,#16213e 100%);
-color:#f0f0f0;
-text-align:center;
-min-height:100vh;
-overflow-x:hidden;
+  font-family:'Poppins',sans-serif;
+  background:radial-gradient(circle at top,#0c1022,#000);
+  color:#fff;
+  text-align:center;
 }
 
-.container{
-max-width:420px;
-margin:auto;
-padding:30px 20px 50px;
-position:relative;
+/* HERO */
+.hero{
+  padding:50px 20px 40px;
 }
 
-@keyframes glowPulse{
-0%,100%{box-shadow:0 0 20px rgba(212,175,55,.5),inset 0 0 20px rgba(212,175,55,.1)}
-50%{box-shadow:0 0 40px rgba(212,175,55,.8),inset 0 0 30px rgba(212,175,55,.2)}
+/* LOGO */
+.hero img{
+  width:140px;
+  height:140px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid rgba(255,215,0,.4);
+  box-shadow:
+    0 0 25px rgba(255,215,0,.8),
+    0 0 60px rgba(0,198,255,.4);
+  margin-bottom:18px;
 }
 
-@keyframes float{
-0%,100%{transform:translateY(0)}
-50%{transform:translateY(-10px)}
+/* NAME */
+.trader-name{
+  font-size:28px;
+  font-weight:900;
+  margin-bottom:18px;
+  letter-spacing:1px;
+  background:linear-gradient(90deg,#ffd700,#00c6ff,#8e2de2);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
-.logo-wrap{
-margin:25px 0 20px;
-display:flex;justify-content:center;
-perspective:1000px;
+/* CTA */
+.cta{
+  display:inline-block;
+  width:100%;
+  max-width:380px;
+  padding:18px;
+  margin:0 auto 26px;
+  font-size:18px;
+  font-weight:900;
+  border-radius:60px;
+  background:linear-gradient(90deg,#ffd700,#ff0080,#8e2de2);
+  color:#000;
+  text-decoration:none;
+  box-shadow:0 15px 40px rgba(0,0,0,.8);
+  transition:.25s ease;
 }
-.logo-gold{
-width:160px;height:160px;border-radius:50%;
-padding:4px;background:linear-gradient(135deg,#f4d03f,#f39c12,#f4d03f);
-box-shadow:0 15px 35px rgba(244,208,63,.4);
-animation:glowPulse 2.5s ease-in-out infinite;
-transform-style:preserve-3d;
-transition:transform .3s ease;
-}
-.logo-gold:hover{transform:rotateY(10deg) rotateX(10deg);}
-.logo-gold img{
-width:100%;height:100%;border-radius:50%;
-background:linear-gradient(135deg,#1a1a2e,#16213e);
-filter:drop-shadow(0 2px 8px rgba(0,0,0,.5));
-}
-
-h1{
-margin:20px 0 10px;
-font-size:32px;font-weight:900;
-letter-spacing:2px;background:linear-gradient(135deg,#f4d03f,#f39c12);
--webkit-background-clip:text;-webkit-text-fill-color:transparent;
-background-clip:text;
-text-shadow:0 0 20px rgba(244,208,63,.5);
-animation:float 4s ease-in-out infinite;
-}
-.sub{
-font-size:15px;color:#c0a375;
-font-weight:500;letter-spacing:1px;
-text-shadow:0 1px 3px rgba(0,0,0,.5);
-margin-bottom:25px;
+.cta i{margin-right:8px}
+.cta:hover{
+  transform:translateY(-3px) scale(1.03);
+  box-shadow:0 0 40px rgba(255,215,0,.9);
 }
 
-.info-box{
-margin:25px 0;background:linear-gradient(145deg,#1a1a2e,#16213e);
-border-radius:20px;padding:20px 22px;
-text-align:left;border:1px solid rgba(244,208,63,.2);
-box-shadow:0 10px 30px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.1);
-backdrop-filter:blur(10px);
+/* TITLES */
+.hero h1{
+  font-size:32px;
+  font-weight:900;
+  margin-bottom:10px;
 }
-.info-box h3{margin:0 0 15px 0;font-size:18px;color:#f4d03f;font-weight:700}
-.info-box li{
-margin:12px 0;font-size:15px;
-opacity:.9;transition:opacity .3s ease;
-}
-.info-box li:hover{opacity:1;}
-.info-box li::marker{color:#f39c12;}
-
-.join-btn{
-margin:30px auto 20px;display:block;
-width:100%;max-width:380px;padding:20px 30px;
-font-size:20px;font-weight:900;border-radius:25px;
-color:#fff;text-decoration:none;
-background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
-box-shadow:0 15px 35px rgba(102,126,234,.4),0 5px 15px rgba(0,0,0,.3);
-animation:glowPulse 2.8s ease-in-out infinite;
-transition:all .3s ease;position:relative;overflow:hidden;
-}
-.join-btn:hover{
-transform:translateY(-3px);box-shadow:0 20px 45px rgba(102,126,234,.5);
-}
-.join-btn::before{
-content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;
-background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);
-transition:left .5s;
-}
-.join-btn:hover::before{left:100%;}
-
-.live{
-margin:15px 0;font-size:20px;font-weight:800;
-color:#f4d03f;text-shadow:0 0 15px rgba(244,208,63,.6);
-animation:float 3s ease-in-out infinite;
+.hero p{
+  font-size:16px;
+  color:#ccc;
 }
 
-.client-box{
-margin:20px auto;background:linear-gradient(145deg,#1a1a2e,#16213e);
-border-radius:20px;padding:20px;max-width:380px;
-border:1px solid rgba(244,208,63,.2);
-box-shadow:0 10px 30px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.1);
-backdrop-filter:blur(10px);
-}
-.profit{
-font-size:24px;font-weight:900;
-background:linear-gradient(135deg,#00ff88,#00cc6a);
--webkit-background-clip:text;-webkit-text-fill-color:transparent;
-margin-bottom:8px;
-}
-.small{font-size:13px;color:#9aa0a6;opacity:.8}
-
-.warn{
-margin-top:25px;font-size:12px;color:#888;
-line-height:1.6;max-width:340px;margin-left:auto;margin-right:auto;
-background:rgba(0,0,0,.3);padding:15px;border-radius:12px;
-border-left:3px solid #f39c12;
+/* INFO */
+.info{
+  padding:30px 18px;
 }
 
-@media (max-width:480px){
-.container{padding:20px 15px 40px}
-.logo-gold{width:140px;height:140px;padding:3px}
-h1{font-size:28px;letter-spacing:1.5px}
-.join-btn{padding:18px 25px;font-size:18px}
+.card{
+  background:rgba(255,255,255,.04);
+  backdrop-filter:blur(18px);
+  border-radius:26px;
+  padding:26px;
+  box-shadow:
+    inset 0 0 30px rgba(255,255,255,.04),
+    0 0 40px rgba(0,198,255,.18);
+  border:1px solid rgba(255,255,255,.08);
+}
+
+/* POINTS */
+.point{
+  display:flex;
+  gap:14px;
+  align-items:center;
+  margin:18px 0;
+}
+.point i{
+  font-size:20px;
+  color:#ffd700;
+}
+.point span{
+  font-size:15.5px;
+  text-align:left;
+  color:#e6e6e6;
+}
+
+/* STATS */
+.stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin-top:24px;
+}
+.stat{
+  background:linear-gradient(180deg,#0f1629,#060914);
+  padding:18px;
+  border-radius:18px;
+  box-shadow:0 0 25px rgba(0,0,0,.6);
+}
+.stat i{
+  font-size:22px;
+  color:#00c6ff;
+  margin-bottom:6px;
+}
+.stat h3{
+  font-size:18px;
+  font-weight:900;
+}
+.stat p{
+  font-size:12px;
+  color:#aaa;
+}
+
+/* DISCLAIMER */
+.disclaimer{
+  padding:26px 18px;
+  font-size:12.5px;
+  color:#aaa;
+  line-height:1.6;
+}
+
+/* FOOTER */
+.footer{
+  padding:18px 10px;
+  font-size:13px;
+  color:#888;
 }
 </style>
 </head>
 
 <body>
-<div class="container">
-  <div class="logo-wrap">
-    <div class="logo-gold">
-      <img src="https://uploads.onecompiler.io/445e5df86/445tc7ue3/330.png" alt="Gujarati Trader">
-    </div>
+
+<section class="hero">
+
+  <img src="https://uploads.onecompiler.io/446vwj75z/448zrd6vz/WhatsApp%20Image%202025-12-29%20at%2018.24.42.jpeg"
+       alt="Gujarati Trader Logo">
+
+  <div class="trader-name">
+    💎 ગુજરાતી 𝐓𝐑𝐀𝐃𝐄𝐑 💎
   </div>
 
-  <h1>GUJARATI TRADER</h1>
-  <div class="sub">Market Education • Discipline • Risk Awareness</div>
-
-  <div class="info-box">
-    <h3>🎯 What You'll Learn:</h3>
-    <ul>
-      <li>📊 Chart Reading & Technical Levels</li>
-      <li>📈 Nifty • BankNifty • Stocks</li>
-      <li>🛡️ Risk Management Education</li>
-    </ul>
-  </div>
-
-  <a class="join-btn" href="#" onclick="trackTelegramSubscribe()">
-    🚀 JOIN OUR TELEGRAM NOW
+  <!-- TELEGRAM JOIN BUTTON -->
+  <a href="https://t.me/+8u8p66LeJVJhMzg1"
+     target="_blank"
+     class="cta subscribe-btn">
+    <i class="fab fa-telegram-plane"></i> JOIN OUR TELEGRAM
   </a>
 
-  <div class="live">🔴 Community Learning Update</div>
+  <h1>Premium Indian Stock Market Community</h1>
+  <p>Intraday • Options • NIFTY • BANKNIFTY • Smart Trading</p>
 
-  <div class="client-box">
-    <div class="profit">Live Chart Learning</div>
-    <div class="small">Educational market discussion only</div>
-  </div>
+</section>
 
-  <div class="warn">
-    ⚠️ Educational purpose only. No tips, no guarantees.<br>
-    Market participation involves risk. Trade responsibly.
+<section class="info">
+  <div class="card">
+
+    <div class="point">
+      <i class="fa-solid fa-chart-line"></i>
+      <span>Professional Intraday, Options & Index Trading Setups</span>
+    </div>
+
+    <div class="point">
+      <i class="fa-solid fa-crosshairs"></i>
+      <span>Precise Entry, Target & Stop-Loss with Risk Control</span>
+    </div>
+
+    <div class="point">
+      <i class="fa-solid fa-shield-halved"></i>
+      <span>Capital Protection & Discipline-Based Trading Strategy</span>
+    </div>
+
+    <div class="point">
+      <i class="fa-solid fa-bolt"></i>
+      <span>Live Market Updates, News Impact & Trend Analysis</span>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <i class="fa-solid fa-indian-rupee-sign"></i>
+        <h3>Equity</h3>
+        <p>Cash Market Trades</p>
+      </div>
+
+      <div class="stat">
+        <i class="fa-solid fa-layer-group"></i>
+        <h3>Options</h3>
+        <p>NIFTY & BANKNIFTY</p>
+      </div>
+
+      <div class="stat">
+        <i class="fa-solid fa-clock"></i>
+        <h3>Daily</h3>
+        <p>Market Analysis</p>
+      </div>
+    </div>
+
   </div>
+</section>
+
+<div class="disclaimer">
+  Stock market investments are subject to market risks.  
+  This community is for educational purposes only.  
+  Please trade responsibly and consult your financial advisor before investing.
 </div>
 
-<!-- ✅ FIXED & FASTER TELEGRAM SCRIPT -->
+<div class="footer">
+  © 2026 Gujarati Trader • All Rights Reserved
+</div>
+
+<!-- TRACKING SCRIPT (UNCHANGED) -->
 <script>
-function trackTelegramSubscribe(){
-  if(!localStorage.getItem('tg_subscribed')){
-    fbq('track','Subscribe',{platform:'telegram'});
-    localStorage.setItem('tg_subscribed','1');
-  }
-  // Instant redirect (50ms)
-  setTimeout(function(){
-    window.location.href = "https://t.me/+DUMUrNuIsWQ0ZjQ1";
-  }, 50);
+const PAGEVIEW_KEY = "gt_pageview_tracked";
+const SUBSCRIBE_KEY = "gt_subscribe_tracked";
+
+if (!localStorage.getItem(PAGEVIEW_KEY)) {
+    fbq('track', 'PageView');
+    localStorage.setItem(PAGEVIEW_KEY, "true");
 }
+
+document.querySelector(".subscribe-btn").addEventListener("click", function () {
+    if (!localStorage.getItem(SUBSCRIBE_KEY)) {
+        fbq('track', 'Lead');
+        fbq('trackCustom', 'TelegramSubscribe', {
+            source: 'Landing Page',
+            platform: 'Telegram'
+        });
+        localStorage.setItem(SUBSCRIBE_KEY, "true");
+    }
+});
 </script>
 
 </body>
 </html>
-
